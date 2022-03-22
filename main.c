@@ -1,7 +1,7 @@
 
 //*** Program Header ***
 /************************************************************************************
-	File Name: 		
+	File Name: External_InterruptsATMega16		
 	Author:	   ASHISH SHARMA	
 	Date:	   March 21, 2022 
 	Modified:  None	
@@ -10,7 +10,6 @@
 ************************************************************************************/
 
 // Preprocessor ===================================================================
- */ 
 #define F_CPU 8000000UL
 #include <avr/io.h>
 #include <util/delay.h>
@@ -22,14 +21,14 @@ int main(void)
 	sei();	//GIE Set
 	GICR |= (1<<INT1) | (1<<INT0);	//Enable Interrupts
 	MCUCR |= (1<<ISC11) | (1<<ISC10) | (1<<ISC01) | (1<<ISC00);	
-	PORTB &= (~(1<<PB0));	
+		
     while (1) 
     {
 
     }
 }
 
-/*** Interrupt Service Routine (the ISR) functions will be executed respectively when INT0 and INT1 interrupts will called **//
+/*** Interrupt Service Routine (the ISR) functions will be executed respectively when INT0 and INT1 interrupts will called **/
 
 ISR(INT0_vect)
 {
